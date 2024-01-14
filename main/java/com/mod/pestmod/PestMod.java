@@ -70,22 +70,20 @@ static {
 
     @SubscribeEvent
     public void onChatReceived(ClientChatReceivedEvent event) {
-    //I DONT KNOW WHAT MESSAGE THE SERVER SENDS SO IF THIS IS BAD CODE I REALLLY DONT CARE
-        String strippedMessage = event.message.getUnformattedText().replaceAll("\u00A7[0-9A-FK-ORa-fk-or]", "");
-        strippedMessage = strippedMessage.replaceAll("(?i)§[0-9A-FK-OR]", ""); //paranoid double checking incase uOOA7 doesnt work
+    //I DON'T KNOW WHAT MESSAGE THE SERVER SENDS SO IF THIS IS BAD CODE I REALLLY DON'T CARE
+        String strippedMessage = event.message.getUnformattedText().replaceAll("§[0-9A-FK-ORa-fk-or]", "");
+        strippedMessage = strippedMessage.replaceAll("(?i)§[0-9A-FK-OR]", ""); //paranoid double checking in case uOOA7 doesn't work
         strippedMessage = strippedMessage.replaceAll("[^a-z A-Z:0-9/'.]", "");
         if(!strippedMessage.contains(":")) {
             if(strippedMessage.contains("Pest")) {
                 ChatUtil.trySendClientChatMessage("Pest detected!");
-                playPestNotification();
+                if (GlobalVariables.regPestNoti) {playPestNotification();}
             }
             else if(strippedMessage.contains("reduced by")) {
                 ChatUtil.trySendClientChatMessage("4+ Pests detected!");
-                playFourPestsNotification();
-
+                if (GlobalVariables.fourPestNoti) {playFourPestsNotification();}
             }
         }
-
 
     }
 
