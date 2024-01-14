@@ -1,0 +1,16 @@
+[
+{
+  "modid": "pestmod",
+  "name": "Pest Notifier Mod",
+  "description": "Notifies you when pests appear in your Hypixel Skyblock garden.",
+  "version": "1.0.0",
+  "mcversion": "1.8.9",
+  "url": "",
+  "updateUrl": "",
+  "authorList": ["Full Time Mogger"],
+  "credits": "The Forge and FML guys, for making this example",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]
